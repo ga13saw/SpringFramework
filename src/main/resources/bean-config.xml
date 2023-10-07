@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+	https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<bean id="student" class="com.springframework.practice.model.Student">
+    <property name="studentId" value="S123456"/>
+    <property name="studentName" value="Raghu tekriwal"/>
+    <property name="courses">
+        <list>
+            <value>Java</value>
+            <value>C++</value>
+            <value>Database</value>
+            <value>DSA</value>
+        </list>
+    </property>
+    <property name="courseToIdMap">
+        <map>
+            <entry key="Java" value="101"/>
+            <entry key="Database" value="102"/>
+            <entry key="DSA" value="103"/>
+        </map>
+    </property>
+    <property name="properties">
+        <props>
+            <prop key="url">www.google.com</prop>
+            <prop key="username">gansaw</prop>
+            <prop key="password">KeepCalm</prop>
+        </props>
+    </property>
+    <property name="college" ref="college"/>
+
+</bean>
+    <bean name="college" class="com.springframework.practice.model.College">
+        <property name="collegeName" value="SFIT"/>
+        <property name="collegeAddress" value="Borivali"/>
+        <property name="collegeRank" value="4"/>
+    </bean>
+
+</beans>

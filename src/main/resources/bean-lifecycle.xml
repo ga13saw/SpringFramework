@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+	    https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+
+<context:annotation-config />
+<bean name="library" class="com.springframework.practice.model.Library" init-method="init" destroy-method="destroy">
+    <property name="roomNo" value="101"/>
+    <property name="librarianName" value="Shyama"/>
+</bean>
+
+    <bean name="lab" class="com.springframework.practice.model.Lab">
+        <property name="roomNo" value="101"/>
+        <property name="labName" value="PhysicsLab"/>
+    </bean>
+
+    <bean name="classRoom" class="com.springframework.practice.model.ClassRoom">
+        <property name="roomNo" value="101"/>
+        <property name="className" value="FE-IT"/>
+    </bean>
+
+    <bean name="college" class="com.springframework.practice.model.College">
+        <property name="collegeName" value="SFIT"/>
+        <property name="collegeAddress" value="Borivali"/>
+        <property name="collegeRank" value="4"/>
+    </bean>
+
+    <bean name="teacher" class="com.springframework.practice.model.Teacher">
+        <constructor-arg value="Rekha"/>
+        <constructor-arg value="T1001"/>
+    </bean>
+    <!--for @Autowired annotation-->
+    <bean name="canteen" class="com.springframework.practice.model.Canteen"/>
+
+    <bean name="canteenXml" class="com.springframework.practice.model.Canteen" autowire="byName"/>
+
+</beans>

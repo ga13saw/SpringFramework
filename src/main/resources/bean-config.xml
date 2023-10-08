@@ -40,4 +40,40 @@
         <property name="collegeRank" value="4"/>
     </bean>
 
+    <bean name="studentOnCons" class="com.springframework.practice.model.Student">
+        <constructor-arg name="studentId" value="S101"/>
+        <constructor-arg name="studentName" value="SFIT"/>
+        <constructor-arg name="contactNo" value="98767565"/>
+        <constructor-arg name="address" value="Borivali"/>
+        <constructor-arg name="courses">
+            <list>
+                <value>Java</value>
+                <value>C++</value>
+                <value>Database</value>
+                <value>DSA</value>
+            </list>
+        </constructor-arg>
+        <constructor-arg name="courseToIdMap">
+            <map>
+                <entry key="Java" value="101"/>
+                <entry key="Database" value="102"/>
+                <entry key="DSA" value="103"/>
+            </map>
+        </constructor-arg>
+        <constructor-arg name="properties">
+            <props>
+                <prop key="url">www.google.com</prop>
+                <prop key="username">gansaw</prop>
+                <prop key="password">KeepCalm</prop>
+            </props>
+        </constructor-arg>
+
+        <constructor-arg name="college" ref="college"/>
+
+    </bean>
+    <bean name="teacher" class="com.springframework.practice.model.Teacher">
+        <constructor-arg value="Rekha"/>
+        <constructor-arg value="T1001"/>
+    </bean>
+
 </beans>

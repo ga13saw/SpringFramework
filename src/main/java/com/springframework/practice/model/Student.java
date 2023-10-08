@@ -22,4 +22,15 @@ public class Student {
     private Map<String,Integer> courseToIdMap;
     private Properties properties;
     private College college;
+
+    public Student(String studentId, String studentName, String contactNo, String address) {
+        this.studentId = studentId;
+        this.studentName = studentName;
+        this.contactNo = contactNo;
+        this.address = address;
+    }
+
+    public Student(String studentId) {
+        this.studentId = studentId;
+    }
 }
